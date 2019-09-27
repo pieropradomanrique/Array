@@ -1,0 +1,93 @@
+#include <iostream>
+
+using namespace std;
+
+void imprimir (int arr[],int tam){
+    for (int i=0; i<tam ;i++){
+        cout<<arr[i]<<'\t';}
+
+
+
+}
+int suma(int arr[],int tam){
+     int sum=0;
+     for(int i=0;i<tam;i++){
+        sum+=arr[i];
+
+     }
+    return sum;
+}
+
+void invertir (int arr[],int tam){
+   int x=tam/2;
+   tam-=1;
+    for(int i=0;i<tam;i++){
+        int c = arr[i];
+        arr[i]=arr[tam];
+        arr[tam--]= c;
+        }
+
+    }
+
+int sumare (int arr[], int tam){
+    int i=0;
+    if (i==tam){
+        return 1;
+    }
+    else{
+        return arr[i]+suma(arr,tam++);
+    }
+    }
+
+
+void bubble(int arr[],int tam){
+        for (int i=1;i<tam;i++){
+            for (int h=0;h<tam-i;h++){
+                if (arr[h]>arr[h+1]){
+                    int c= arr[h];
+                    arr[h]= arr[h+1];
+                    arr [h+1]=c;}
+
+
+
+
+                }
+        }
+
+}
+
+void insertion(int arr [], int tam){
+        for (int i=1;i<tam;i++){
+            int c=arr[i];
+            int h = i-1;
+            while ((arr [h]>c)&& (h>=0)){
+                arr [h+1]= arr [h];
+                h--;
+                arr [h+1]=c;
+             }
+        }
+}
+
+
+int main()
+{ int X[5]={1,2,4,3,5};
+    imprimir (X,5);
+    cout<<endl;
+    cout<<endl;
+    cout<<suma(X,5)<<endl;
+    cout<<endl;
+    invertir(X,5);
+    imprimir (X,5);
+    cout<<endl;
+    cout<<sumare(X,5);
+    cout<<endl;
+    cout<<endl;
+    bubble(X,5);
+    imprimir (X,5);
+    cout<<endl;
+    cout<<endl;
+    insertion(X,5);
+    imprimir(X,5);
+
+return 0;
+}
